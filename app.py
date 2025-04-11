@@ -26,6 +26,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.get("/")
+async def root():
+    return {"message": "Service is up"}
+
 # ⏳ Convert timestamp to IST before saving
 def get_ist_time():
     utc_now = datetime.utcnow()
