@@ -95,8 +95,8 @@ store_documents_in_chroma()
 # 📡 MongoDB Atlas Connection 
 MONGO_URI = "mongodb+srv://sahasra:4Jan%401998@cluster0.8yacy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(MONGO_URI)
+client = MongoClient(MONGO_URI, ssl=True)
 db = client["chatbot"]
-chat_collection = db["chat_history"]
 
 # 📌 Class for user query
 class UserQuery(BaseModel):
